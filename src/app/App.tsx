@@ -7,7 +7,7 @@ import Footer from "@/common/components/Footer";
 import { getErrors } from "@/common/utils/helpers";
 
 const App: React.FC = () => {
-  const errors = getErrors(true);
+  const errors = getErrors();
   const { hash } = useLocation();
 
   return (

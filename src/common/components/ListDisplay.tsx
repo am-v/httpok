@@ -9,7 +9,7 @@ interface ListDisplayProps {
 
 const ListDisplay: React.FC<ListDisplayProps> = ({ data, hash }) => (
   <div className="w-full max-w-screen-xl mx-auto px-3 py-4 flex flex-col space-y-9">
-    {data.map((group) => (
+    {data.map(({ list = [], ...group }) => (
       <div
         id={group.id}
         key={group.id}
@@ -28,10 +28,10 @@ const ListDisplay: React.FC<ListDisplayProps> = ({ data, hash }) => (
           </div>
         </div>
         <div className="w-full md:w-2/3 bg-white rounded flex flex-col divide-y divide-slate-100 px-4 py-6">
-          {group.list.map((error) => (
-            <div key={error.code} id={error.code} className="py-2">
+          {list.map((error) => (
+            <div key={error.id} id={error.id} className="py-2">
               <ListItem
-                code={error.code}
+                code={error.id}
                 message={error.message}
                 description={error.description}
                 isActive={hash === `#${error.code}`}
