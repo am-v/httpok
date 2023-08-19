@@ -10,7 +10,7 @@ const Header: React.FC = () => (
         <a href="https://github.com/am-v/httpok" rel="nofollow" target="_blank">
           <svg
             viewBox="0 0 24 24"
-            ariaHidden="true"
+            aria-hidden="true"
             className="h-6 w-6fill-state-900"
           >
             <path
